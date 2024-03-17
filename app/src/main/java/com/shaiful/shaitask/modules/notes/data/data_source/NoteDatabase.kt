@@ -10,4 +10,9 @@ import com.shaiful.shaitask.modules.notes.domain.model.Note
 )
 abstract class NoteDatabase: RoomDatabase() {
     abstract val noteDao: NoteDao
+
+    companion object {
+        const val DATABASE_NAME = "note_database"
+    }
+
 }
