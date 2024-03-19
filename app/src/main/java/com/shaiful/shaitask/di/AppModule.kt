@@ -5,6 +5,7 @@ import androidx.room.Room
 import com.shaiful.shaitask.modules.notes.data.data_source.NoteDatabase
 import com.shaiful.shaitask.modules.notes.data.repository.NoteRepositoryImpl
 import com.shaiful.shaitask.modules.notes.domain.repository.NoteRepository
+import com.shaiful.shaitask.modules.notes.domain.use_case.AddNoteUseCase
 import com.shaiful.shaitask.modules.notes.domain.use_case.DeleteNoteUseCase
 import com.shaiful.shaitask.modules.notes.domain.use_case.GetNotesUseCase
 import com.shaiful.shaitask.modules.notes.domain.use_case.NoteUseCases
@@ -40,6 +41,7 @@ class AppModule {
         return NoteUseCases(
             getNotesUseCase = GetNotesUseCase(noteRepository),
             deleteNoteUseCase = DeleteNoteUseCase(noteRepository),
+            addNoteUseCase = AddNoteUseCase(noteRepository)
         )
     }
 
